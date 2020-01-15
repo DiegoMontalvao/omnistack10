@@ -1,3 +1,17 @@
+Conceitos principais do REACT:
+Componente - Bloco isolado de HTML, CSS e JS, o qual não interfere no restante da aplicação
+Componente é basicamente uma função que retorna algum conteúdo e possuem sempre a 1º letra em maiusculo
+
+Propriedade - Informações que um componente PAI passa para o componente FILHO, são as propriedades que o componente
+recebe, como por exemplo, título, id, key, classname e assim por diante
+
+Estado - Informações mantidas pelo componente (lembrar: imutabilidade)
+
+Imutabilidade - Em react a imutabilidade é o conceito de nunca alterar um dado e sim criar um novo dado a partir
+do valor anterior que havia nesse dado.
+
+Fragment - TAG sem nomenclatura (<> </>)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
