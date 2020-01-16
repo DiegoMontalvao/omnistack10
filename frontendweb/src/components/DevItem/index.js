@@ -19,7 +19,7 @@ function DevItem({ dev, handleDestroyDev }){
             <p>{dev.bio}</p>
             <div className="user-links">
                 <a href={`https://github.com/${dev.github_username}`}>Acessar perfil no Github</a>
-                <button type="button" onClick={handleDelete}>excluir</button>
+                <button className="delete-button"><img src="https://img.icons8.com/color/48/000000/trash.png" alt="delete"onClick={handleDelete}/></button>
             </div>
         </li>
     );

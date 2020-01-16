@@ -53,18 +53,14 @@ li.dev-item a:hover {
     color: #5a2ea6;    
 }
 
-li.dev-item button {
-    background-color: #7d40e7;
-    color: #fff;
-    width: 50px;
-    height: 20px;
-    border-radius: 2px;
-    font-size: 13px;
-    color: #fff;
-    cursor: pointer;
-    transition: background 0.5s;
+.delete-button {
+    border: none;
+    background: #fff;
+    display: flexbox;
+    align-self: flex-end;
 }
 
-li.dev-item button:hover {
-    background-color: #6931ca;
+.delete-button img {
+    width: 25px;
+    height: 25px;
 }
