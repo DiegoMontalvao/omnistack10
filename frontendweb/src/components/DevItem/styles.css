@@ -22,9 +22,11 @@ li.dev-item header .user-info {
 }
 
 .user-info strong {
-    display: block;
+    display: flex;
+    flex: 1;
     font-size: 16px;
     color: #333;
+    align-content: space-between;
 }
 
 .user-info span {
@@ -44,8 +46,25 @@ li.dev-item a {
     color: #8e4dff;
     font-size: 14px;
     text-decoration: none;
+    margin-right: 40%;
 }
 
 li.dev-item a:hover {
     color: #5a2ea6;    
+}
+
+li.dev-item button {
+    background-color: #7d40e7;
+    color: #fff;
+    width: 50px;
+    height: 20px;
+    border-radius: 2px;
+    font-size: 13px;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.5s;
+}
+
+li.dev-item button:hover {
+    background-color: #6931ca;
 }
