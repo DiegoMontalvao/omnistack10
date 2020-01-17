@@ -61,17 +61,38 @@ const [isKeyboardVisible, setisKeyboardVisible] = useState(false);
     }, []);
 
     async function loadDevs() {
-        const { latitude, longitude } = currentRegion;
 
-        const response = await api.get('/search', {
-            params: {
-                latitude,
-                longitude,
-                techs
-            }
-        });
+        if (!techs) {
+        
+            const tech = 'ReactJS';
+            
+            const { latitude, longitude } = currentRegion;
 
-        setDevs(response.data);
+            const response = await api.get('/search', {
+                params: {
+                    latitude,
+                    longitude,
+                    techs: tech
+                }
+            });
+
+            setDevs(response.data);
+        }
+
+        else {
+            const { latitude, longitude } = currentRegion;
+
+            const response = await api.get('/search', {
+                params: {
+                    latitude,
+                    longitude,
+                    techs
+                }
+            });
+    
+            setDevs(response.data);
+        }
+        
     }
 
     function handleRegionChanged(region) {
