@@ -6,8 +6,6 @@ import { MaterialIcons } from '@expo/vector-icons';
 
 import api from '../services/api';
 
-
-
 function Main({ navigation }) {
 
 const [isKeyboardVisible, setisKeyboardVisible] = useState(false);
@@ -38,6 +36,7 @@ const [isKeyboardVisible, setisKeyboardVisible] = useState(false);
     const [techs, setTechs] = useState('');
 
     useEffect(() => {
+
         async function loadInitialPosition() {
             const { granted } = await requestPermissionsAsync();
 
@@ -54,10 +53,38 @@ const [isKeyboardVisible, setisKeyboardVisible] = useState(false);
                     latitudeDelta: 0.05,
                     longitudeDelta: 0.05,
                 })
-            }
+            }           
+            
         }
 
-        loadInitialPosition();
+        loadInitialPosition();        
+    }, []);
+
+    useEffect(() => {
+        
+        async function loadInitialDevs() {
+
+            const { coords } = await getCurrentPositionAsync({
+                enableHighAccuracy: true,                    
+            });
+
+            const lat = coords.latitude;
+            const long = coords.longitude;
+            const tec = 'ReactJS';
+
+            const response = await api.get('/search', {
+                params: {
+                    latitude: lat,
+                    longitude: long,
+                    techs: tec
+                }
+            });
+        
+            setDevs(response.data);           
+                       
+        }
+
+        loadInitialDevs();   
     }, []);
 
     async function loadDevs() {
