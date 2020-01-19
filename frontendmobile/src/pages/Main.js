@@ -12,20 +12,20 @@ function Main({ navigation }) {
 const [isKeyboardVisible, setisKeyboardVisible] = useState(false);
 
  useEffect(() => {
+
     const keyboardDidShowListener = Keyboard.addListener(
-        'keyboardDidShow', 
+        'keyboardDidShow',
         () => {
             setisKeyboardVisible(true);
         }
     );
 
     const keyboardDidHideListener = Keyboard.addListener(
-      'keyboardDidHide',
-      () => {
+      'keyboardDidHide', () => {
         setisKeyboardVisible(false);
-      }
+        }
     );
-    
+
     return () => {
       keyboardDidHideListener.remove();
       keyboardDidShowListener.remove();
@@ -88,13 +88,11 @@ const [isKeyboardVisible, setisKeyboardVisible] = useState(false);
 
             const lat = coords.latitude;
             const long = coords.longitude;
-            const tec = 'ReactJS';
-
-            const response = await api.get('/search', {
+            
+            const response = await api.get('/devsnear', {
                 params: {
                     latitude: lat,
                     longitude: long,
-                    techs: tec
                 }
             });
         
@@ -109,15 +107,12 @@ const [isKeyboardVisible, setisKeyboardVisible] = useState(false);
 
         if (!techs) {
         
-            const tech = 'ReactJS';
-            
             const { latitude, longitude } = currentRegion;
 
-            const response = await api.get('/search', {
+            const response = await api.get('/devsnear', {
                 params: {
                     latitude,
                     longitude,
-                    techs: tech
                 }
             });
 
