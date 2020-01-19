@@ -43,10 +43,13 @@ li.dev-item p {
 }
 
 li.dev-item a {
-    color: #8e4dff;
-    font-size: 14px;
-    text-decoration: none;
-    margin-right: 40%;
+    margin-bottom: 1px;
+    background: #fff;
+}
+
+li.dev-item a img {
+    width: 25px;
+    height: 25px;
 }
 
 li.dev-item a:hover {
@@ -58,6 +61,7 @@ li.dev-item a:hover {
     background: #fff;
     display: flexbox;
     align-self: flex-end;
+    margin-bottom: 1px;
 }
 
 .delete-button img {

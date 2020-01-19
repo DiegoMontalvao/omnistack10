@@ -1,5 +1,7 @@
 import React from 'react';
 
+import gitlogo from '../../assets/github-logo.png'
+
 import './styles.css';
 
 function DevItem({ dev, handleDestroyDev }){
@@ -18,8 +20,8 @@ function DevItem({ dev, handleDestroyDev }){
             </header>
             <p>{dev.bio}</p>
             <div className="user-links">
-                <a href={`https://github.com/${dev.github_username}`}>Acessar perfil no Github</a>
-                <button className="delete-button"><img src="https://img.icons8.com/color/48/000000/trash.png" alt="delete" onClick={handleDelete}/></button>
+                <a href={`https://github.com/${dev.github_username}`}><img src={gitlogo} alt="gitlogo" /> </a>
+                <button className="delete-button"><img src="https://img.icons8.com/color/48/000000/trash.png" alt="delete" onClick={handleDelete} /></button>
             </div>
         </li>
     );
